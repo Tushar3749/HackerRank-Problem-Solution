@@ -1,0 +1,67 @@
+import java.util.*;
+
+ 
+
+
+
+public class HackerRank {
+
+     long arr [] = new long [10000009];
+     
+     long solve(int n){
+     
+         long mx = Integer.MIN_VALUE;
+         long num=0;
+        
+         
+         for(int i=1;i<=n;i++){
+         
+              num+=arr[i];
+             
+              if(num>=mx){
+         
+                  mx = num;
+              }
+             }
+         
+        // for(int i=1;i<=n;i++)System.out.print(arr[i]+" ");
+          return mx;
+         
+         }
+         
+      
+     
+    
+    public static void main(String[] args) {
+      
+       HackerRank h = new HackerRank();
+       
+       int n,m,k,a,b;
+       Scanner sc = new Scanner (System.in);
+       
+       n = sc.nextInt();
+       m= sc.nextInt();
+       
+       for(int i=0;i<m;i++){
+       
+         a = sc.nextInt();
+         b= sc.nextInt();
+         k = sc.nextInt();
+         
+           h.arr[a] +=k;
+         
+         if(b+1<=n){
+         
+           h.arr[b+1]-=k;
+         }
+       
+       } /// end of for
+       
+       // for(int i=1;i<=n;i++)System.out.print(h.arr[i]+" ");
+       // System.out.println();
+     long mx = h.solve(n);
+     System.out.println(mx);
+}
+
+
+}
