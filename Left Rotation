@@ -1,0 +1,48 @@
+
+import java.util.*;
+
+public class HackerRank {
+
+    public static void main(String[] args) {
+        
+       int arr [] = new int [100005];
+      
+       Scanner sc = new Scanner(System.in);
+       int n,d,t,T,tmp;
+       
+        n = sc.nextInt();
+        d = sc.nextInt();
+        
+        for(int i=0;i<n;i++){
+        
+           arr[i] = sc.nextInt();
+        }
+        
+        int k;
+        
+       for(int i=d-1;i>=0;i--){
+       
+              k=i+1; 
+           
+            for(int j=0;j<n-d;j++){
+                
+                tmp = arr[k-1];
+                arr[k-1]=arr[k];
+                arr[k]= tmp;
+                k++;
+            
+            }
+           
+       
+       }
+       
+       for(int i=0;i<n;i++){
+       
+           System.out.print(arr[i]+" ");
+       }
+       
+       
+       
+    }
+    
+}
