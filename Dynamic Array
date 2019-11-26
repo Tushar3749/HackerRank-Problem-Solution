@@ -1,0 +1,71 @@
+import java.util.*;
+
+
+  //Scanner in = new Scanner(System.in);
+  //System.out.println("RIGHT");
+
+
+
+public class HackerRank {
+
+    
+    public static void main(String[] args) {
+      
+        Scanner sc = new Scanner(System.in);
+        
+        int n,x,y,q,q1,seq,lans;
+        
+        n = sc.nextInt();
+        q = sc.nextInt();
+        
+       ArrayList<Integer>[] l = new ArrayList [n];
+       
+       
+       for(int i=0;i<n;i++){
+       
+        l[i] = new ArrayList<>();
+       
+       }
+        
+        
+        lans =0;
+        
+        
+        for(int t=0;t<q;t++){
+        
+         q1= sc.nextInt();
+         x=  sc.nextInt();
+         y= sc.nextInt();
+         
+         
+         
+         if(q1 ==1){
+         
+           seq = (x^lans)%n;
+         
+           l[seq].add(y);
+         
+         } // type 1 query
+        
+         else{
+         
+          try {
+             
+             seq = (x^lans)%n;    
+             int idx = (l[seq].size());
+             lans = l[seq].get(y%idx);
+             
+              System.out.println(lans);
+   
+          }catch(ArithmeticException arithmeticException){
+             
+         }
+
+         } // type 2 query
+         
+        
+        } /// end of for
+         
+    }
+    
+}
